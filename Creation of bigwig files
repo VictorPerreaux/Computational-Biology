@@ -1,0 +1,1 @@
+/usr/local/bin/bamCoverage -p 8 --normalizeUsing RPGC --effectiveGenomeSize 130000000 -bs 10 -of bigwig -b TRB1_GFP.2h1_input.BR1.R1_sorted.bam -o TRB1_GFP.2h1_input.BR1.R1_sorted.bigwig
