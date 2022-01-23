@@ -1,9 +1,9 @@
 #!/bin/bash
 
-samtools sort -@ 8  H3K27me3.ANYO-1.WT.input.BR1.R1.bam -o H3K27me3.ANYO-1_sorted.WT.input.BR1.R1.bam
+samtools sort -@ 8  FILE.bam -o FILE_sorted.bam
 
-rm H3K27me3.ANYO-1.WT.input.BR1.R1.bam
+rm FILE.bam
  
-echo H3K27me3.ANYO-1_sorted.WT.input.BR1.R1.bam >>  count.txt
+echo FILE_sorted.bam >>  count.txt
 
-samtools view -c -F 4 H3K27me3.ANYO-1_sorted.WT.input.BR1.R1.bam >> count.txt
+samtools view -c -F 4 FILE_sorted.bam >> count.txt
