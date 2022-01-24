@@ -1,9 +1,15 @@
-#!/bin/bash
+#First creation of an index via Bowtie2 
+bowtie2-build /kingdoms/mpb/workspace19/concia/H1_shared/Poubelle_datasets/Col-XJTU.fasta Col-XJTU     
 
+#Then we use this index to align the read an create a Bam file. As we wanter a precise result, we used the --very-sensitive option
+bowtie2 --very-sensitive -x Col-XJTU -U /kingdoms/mpb/workspace19/concia/H1_shared/Poubelle_datasets/raw_data/FILE.fastq | samtools view -b - > FILE.bam
+
+#We sort the files and delete the original bam file in order to optimize storage
 samtools sort -@ 8  FILE.bam -o FILE_sorted.bam
 
 rm FILE.bam
- 
+
+#We created the count.txt file, that contain the number of reads counted for each file
 echo FILE_sorted.bam >>  count.txt
 
 samtools view -c -F 4 FILE_sorted.bam >> count.txt
