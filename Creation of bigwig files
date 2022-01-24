@@ -1,1 +1,3 @@
+#bigwig is a format that is smaller than bam, and will be usefull to have a rapid overview of the data on IGV
+
 /usr/local/bin/bamCoverage -p 8 --normalizeUsing RPGC --effectiveGenomeSize 130000000 -bs 10 -of bigwig -b FILE_sorted.bam -o FILE_sorted.bigwig
